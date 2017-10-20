@@ -12,6 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,12 +42,51 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //Gestion des modules
-        creationModules();
+        //creationModules();
+        modules = IOModule.lireModules(this);
         initPositionModules();
 
         ListView lw_modules = (ListView) findViewById(R.id.lw_modules);
         adapter = new ModuleAdapter(MainActivity.this, modules);
         lw_modules.setAdapter(adapter);//ajout des modules dans la listview
+    }
+
+    /*
+    * lireModules est la methode qui le le fichier ou sont contenus les modules et les instancie en objet java
+    */
+    public List<Module> lireModules() {
+        Log.i("yo", "yo");
+        List<Module> modules = new ArrayList<Module>();
+        BufferedReader reader = null;
+        String ligne;
+
+        String listeMots[]; //Represente les mots d'une ligne
+        String nomModule, parcoursModule, categorieModule;
+        int creditModule;
+
+        InputStream inputStream = this.getResources().openRawResource(R.raw.modules);
+
+        if (inputStream != null) {
+            //Parcours toutes les lignes du fichier texte
+            try {
+                reader = new BufferedReader(new InputStreamReader(inputStream));
+                while ((ligne = reader.readLine()) != null) {
+                    listeMots = ligne.split(" ");
+                    creditModule = Integer.valueOf(listeMots[1]);
+                    nomModule = listeMots[0];
+                    categorieModule = listeMots[2];
+                    parcoursModule = listeMots[3];
+                    modules.add(new Module(nomModule, categorieModule, parcoursModule, creditModule));
+                }
+                //on fermer les flux
+                reader.close();
+                inputStream.close();
+            } catch (IOException e) {
+                System.out.println("Erreur de fichier");
+                e.printStackTrace();
+            }
+        }
+        return modules;
     }
 
     @Override
