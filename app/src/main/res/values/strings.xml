@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">IF26_TP5</string>
+    <string name="action_settings">Settings</string>
+    <string name="delete_module">Supprimer un module</string>
+    <string name="ajouter_module">Ajouter Module</string>
+    <string name="sigle">Sigle :</string>
+    <string name="categorie">Categorie :</string>
+    <string name="parcours">Parcours :</string>
+    <string name="credit">Credits :</string>
+
+    <string name="envoyer">Envoyer</string>
+
+    <string name="drawer_open">Ouvrir</string>
+    <string name="drawer_close">Fermer</string>
+</resources>
