@@ -14,30 +14,28 @@
             android:layout_height="50dp"
             android:layout_marginBottom="30dp"
             android:gravity="center_vertical"
-            android:text="Module"
+            android:text="@string/module"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/amm_sigle"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:elevation="20dp"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text|textPersonName" />
+            android:inputType="textPersonName" />
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginBottom="30dp"
             android:gravity="center_vertical"
-            android:text="Categorie"
+            android:text="@string/categorie"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/amm_categorie"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:elevation="20dp"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName" />
 
@@ -46,14 +44,13 @@
             android:layout_height="50dp"
             android:layout_marginBottom="30dp"
             android:gravity="center_vertical"
-            android:text="Parcours"
+            android:text="@string/parcours"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/amm_parcours"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:elevation="20dp"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName" />
 
@@ -62,16 +59,16 @@
             android:layout_height="50dp"
             android:layout_marginBottom="30dp"
             android:gravity="center_vertical"
-            android:text="Credit"
+            android:text="@string/credit"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/amm_credit"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:elevation="20dp"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="numberDecimal"
+            android:textColorLink="@android:color/background_light" />
 
     </GridLayout>
 
@@ -82,24 +79,24 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/aam_valider"
+            android:id="@+id/amm_valider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:text="Valider" />
+            android:text="@string/valider" />
 
         <Button
-            android:id="@+id/aam_quitter"
+            android:id="@+id/amm_quitter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:text="Quitter" />
+            android:text="@string/quitter" />
     </LinearLayout>
 
 </LinearLayout>

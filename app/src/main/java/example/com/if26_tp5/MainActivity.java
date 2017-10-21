@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //TODO dans la listview on affiche uniquement le nom du module et quand on click dessus ca affiche le detail du module
+//TODO in instancie la base de donnee on se base sur l'activite livre si elle est null on utilise la methode IOModule.lireModules
 public class MainActivity extends AppCompatActivity {
 
     public List<Module> modules = new ArrayList<>();
@@ -23,16 +24,15 @@ public class MainActivity extends AppCompatActivity {
     public static final int CODE_AJOUT_MODULE = 1;
     public static final int CODE_DETAIL_MODULE = 2;
 
-    String test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_bar_activity_main);
+        setContentView(R.layout.listview_main);
 
         //gestion de la barre
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         //Gestion des modules
         //creationModules();
@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             Snackbar.make(findViewById(R.id.coordinator), "erreur sur la creation du module", Snackbar.LENGTH_LONG);
                         }
-
                     }
             }
         }
