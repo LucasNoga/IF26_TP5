@@ -13,4 +13,7 @@
     <string name="drawer_open">Ouvrir</string>
     <string name="drawer_close">Fermer</string>
     <string name="Title">title</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="module">Module</string>
+    <string name="modifier">Modifier</string>
 </resources>

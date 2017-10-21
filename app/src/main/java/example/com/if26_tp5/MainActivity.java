@@ -1,8 +1,6 @@
 package example.com.if26_tp5;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,15 +9,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO dans la listview on affiche uniqument le nom du module et quand on click dessus ca affiche le detail du module
+//TODO dans la listview on affiche uniquement le nom du module et quand on click dessus ca affiche le detail du module
 public class MainActivity extends AppCompatActivity {
 
     public List<Module> modules = new ArrayList<>();
@@ -51,70 +44,11 @@ public class MainActivity extends AppCompatActivity {
         lw_modules.setAdapter(adapter);//ajout des modules dans la listview
     }
 
-    /*
-    * lireModules est la methode qui le le fichier ou sont contenus les modules et les instancie en objet java
-    */
-    public List<Module> lireModules() {
-        Log.i("yo", "yo");
-        List<Module> modules = new ArrayList<Module>();
-        BufferedReader reader = null;
-        String ligne;
-
-        String listeMots[]; //Represente les mots d'une ligne
-        String nomModule, parcoursModule, categorieModule;
-        int creditModule;
-
-        InputStream inputStream = this.getResources().openRawResource(R.raw.modules);
-
-        if (inputStream != null) {
-            //Parcours toutes les lignes du fichier texte
-            try {
-                reader = new BufferedReader(new InputStreamReader(inputStream));
-                while ((ligne = reader.readLine()) != null) {
-                    listeMots = ligne.split(" ");
-                    creditModule = Integer.valueOf(listeMots[1]);
-                    nomModule = listeMots[0];
-                    categorieModule = listeMots[2];
-                    parcoursModule = listeMots[3];
-                    modules.add(new Module(nomModule, categorieModule, parcoursModule, creditModule));
-                }
-                //on fermer les flux
-                reader.close();
-                inputStream.close();
-            } catch (IOException e) {
-                System.out.println("Erreur de fichier");
-                e.printStackTrace();
-            }
-        }
-        return modules;
-    }
-
     @Override
 // Inflate the menu; this adds items to the action bar if it is present.
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
-
-    //creation des modules
-    private void creationModules() {
-        modules.add(new Module("IF26", "CS", "ISI", 6));
-        modules.add(new Module("NF16", "TM", "ISI", 6));
-        modules.add(new Module("LO02", "CS", "ISI", 6));
-        modules.add(new Module("GL02", "TM", "ISI", 6));
-        modules.add(new Module("LO10", "CS", "ISI", 6));
-        modules.add(new Module("LO12", "CS", "ISI", 6));
-        modules.add(new Module("IF07", "TM", "ISI", 6));
-        modules.add(new Module("IF15", "CS", "ISI", 6));
-        modules.add(new Module("SY04", "CS", "ISI", 6));
-        modules.add(new Module("RE02", "CS", "RT", 6));
-        modules.add(new Module("RE04", "TM", "RT", 6));
-        modules.add(new Module("IF10", "CS", "ISI", 6));
-        modules.add(new Module("IF16", "CS", "ISI", 6));
-        modules.add(new Module("SY15", "TM", "ISI", 6));
-        modules.add(new Module("SC00", "CS", "CE", 4));
-        modules.add(new Module("LE08", "CS", "CE", 4));
-        modules.add(new Module("LE03", "CS", "CE", 4));
     }
 
     // Initialisation de la position des modules
@@ -160,124 +94,22 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-}
-
-
-/*
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    public DrawerLayout drawer;
-    public ActionBarDrawerToggle toggle;
-    public List<Module> modules = new ArrayList<>();
-    ModuleAdapter adapter;
-
-    private static final int CODE_REQUETE = 10;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.nav_main);//on lance le layout possedant le drawerLayout
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+    protected void onPause() {
+        super.onPause();
+        //TODO sauvegarder dans la bd les nouveaux tuples
     }
 
-   @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
-public class CheckActivity extends ListActivity
-{
-	/** Called when the activity is first created.
-
-    private EditText		_filterText		= null;
-    private personAdapter	_adapter		= null;
-    private List<Person>		Person;
-    private ListView		personList;
-
-    @SuppressWarnings("unchecked")
     @Override
-    public void onCreate (Bundle savedInstanceState)
-    {
-        super.onCreate (savedInstanceState);
-        setContentView (R.layout.main);
+    protected void onStop() {
+        super.onStop();
+        //TODO sauvegarder dans la bd les nouveaux tuples
+    }
 
-        person = new ArrayList<person> ();
-        person.add (new person ("Toto", "Toti"));
-        person.add (new person ("Tata", "Titi"));
-        person.add (new person ("Padre", "Papa"));
-        person.add (new person ("Mum", "Maman"));
-        person.add (new person ("Aba", "ima"));
-        person.add (new person ("Mickey", "Mouse"));
-        person.add (new person ("Mini", "Mouse"));
-        person.add (new person ("Testeur", "Pro"));
-        person.add (new person ("Developpez", "Forum"));
-        person.add (new person ("Voilou", "Voili"));
-
-        Collections.sort (person);
-
-        _adapter = new personAdapter (this, person);
-        setListAdapter (_adapter);
-        personList = getListView ();
-        personList.setItemsCanFocus (false);
-        personList.setOnItemClickListener (new OnItemClickListener ()
-        {
-
-            @Override
-            public void onItemClick (AdapterView<?> parentView,
-                                     View selectedItemView, int position, long id)
-            {
-                CheckBox c = (CheckBox) selectedItemView
-                        .findViewById (R.id.checkbox);
-//On recupere le tag
-                ViewHolder view = ((ViewHolder) c.getTag ());
-//On gere le check
-                if (!c.isChecked ())
-                {
-                    person.get (view.position).setChecked (true);
-                }
-                else
-                {
-                    person.get (view.position).setChecked (false);
-                }
-//On replace la liste à la bonne position
-                int pos = parentView.getFirstVisiblePosition ();
-                personList.setSelection (pos);
-            }
-        });
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //TODO sauvegarder dans la bd les nouveaux tuples
     }
 }
- */

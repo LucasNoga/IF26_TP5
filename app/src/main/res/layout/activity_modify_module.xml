@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_vertical"
+            android:text="Module"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/amm_sigle"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:elevation="20dp"
+            android:ems="10"
+            android:inputType="text|textPersonName" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_vertical"
+            android:text="Categorie"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/amm_categorie"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:elevation="20dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_vertical"
+            android:text="Parcours"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/amm_parcours"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:elevation="20dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_vertical"
+            android:text="Credit"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/amm_credit"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:elevation="20dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/aam_valider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:text="Valider" />
+
+        <Button
+            android:id="@+id/aam_quitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:text="Quitter" />
+    </LinearLayout>
 
 </LinearLayout>

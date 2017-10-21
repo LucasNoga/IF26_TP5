@@ -1,72 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/adm_sigle"
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="30dp"
-        android:gravity="center_vertical"
-        android:textStyle="bold"
-        tools:text="Module" />
+        android:layout_height="wrap_content"
+        android:columnCount="2">
 
-    <TextView
-        android:id="@+id/adm_categorie"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="30dp"
-        android:gravity="center_vertical"
-        android:text="Categorie"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/module"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/adm_parcours"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="30dp"
-        android:gravity="center_vertical"
-        android:text="Parcours"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/adm_sigle"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/adm_credit"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="30dp"
-        android:gravity="center_vertical"
-        android:text="Credit"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/categorie"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/adm_categorie"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/parcours"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/adm_parcours"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/credit"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/adm_credit"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:textStyle="bold" />
+    </GridLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:id="@+id/adm_modifier"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:text="Modifier" />
+            android:text="@string/modifier" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
+            android:id="@+id/adm_supprimer"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:text="Supprimer" />
+            android:text="@string/supprimer" />
     </LinearLayout>
 
 </LinearLayout>

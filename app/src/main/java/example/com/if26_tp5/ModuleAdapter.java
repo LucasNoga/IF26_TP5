@@ -84,7 +84,7 @@ class ModuleAdapter extends BaseAdapter {
                 context.startActivity(intent);
             }
         });
-
+        Log.i("SIgle", getItem(position).getSigle());
         Log.i("cvPos", position+" itemPosSigle "+  getItem(position).getSigle() + " viewholder " + holder.sigle.getText().toString());
         return convertView;// on retourne la vue
     }
