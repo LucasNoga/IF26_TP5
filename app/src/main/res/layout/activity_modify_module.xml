@@ -10,10 +10,12 @@
         android:columnCount="2">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="100dp"
             android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginBottom="30dp"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="@string/module"
             android:textStyle="bold" />
 
@@ -25,10 +27,12 @@
             android:inputType="textPersonName" />
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="100dp"
             android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginBottom="30dp"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="@string/categorie"
             android:textStyle="bold" />
 
@@ -40,10 +44,12 @@
             android:inputType="textPersonName" />
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="100dp"
             android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginBottom="30dp"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="@string/parcours"
             android:textStyle="bold" />
 
@@ -55,10 +61,12 @@
             android:inputType="textPersonName" />
 
         <TextView
+            android:id="@+id/textView4"
             android:layout_width="100dp"
             android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginBottom="30dp"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="@string/credit"
             android:textStyle="bold" />
 
