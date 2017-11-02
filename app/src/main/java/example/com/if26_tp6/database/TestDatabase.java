@@ -1,11 +1,11 @@
-package example.com.if26_tp5.database;
+package example.com.if26_tp6.database;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import example.com.if26_tp5.Module;
-import example.com.if26_tp5.R;
+import example.com.if26_tp6.Module;
+import example.com.if26_tp6.R;
 
 public class TestDatabase extends AppCompatActivity {
 
@@ -17,9 +17,9 @@ public class TestDatabase extends AppCompatActivity {
         DatabaseModule moduleBD = new DatabaseModule(this);
 
         //Création d'un module
-        Module module = new Module("IF30", "CS", "ISI", 10);
-        Module module2 = new Module("SY46", "CS", "ISI", 5);
-        Module module3 = new Module("LO05", "TM", "ISI", 3);
+        Module module = new Module("IF30",10, "CS", "ISI");
+        Module module2 = new Module("SY46", 5, "CS", "ISI");
+        Module module3 = new Module("LO05", 3, "TM", "ISI");
 
         moduleBD.open();
 

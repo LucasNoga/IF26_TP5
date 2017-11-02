@@ -1,4 +1,4 @@
-package example.com.if26_tp5;
+package example.com.if26_tp6;
 
 import android.support.annotation.NonNull;
 
@@ -8,7 +8,6 @@ import java.io.Serializable;
 public class Module implements Serializable, Comparable {
 
     // position = Position dans le tableau si nous faisons une liste de modules
-    private int	    position;
     private String  sigle;
     private String  categorie;
     private String  parcours;
@@ -19,7 +18,7 @@ public class Module implements Serializable, Comparable {
 
     public Module(){}
 
-    public Module(String sigle, String categorie, String parcours, int credit) {
+    public Module(String sigle, int credit, String categorie, String parcours) {
         this.sigle = sigle;
         this.categorie = categorie;
         this.parcours = parcours;
@@ -32,45 +31,20 @@ public class Module implements Serializable, Comparable {
         return mod.getSigle().compareTo(this.sigle);
     }
 
-    //permet de recuperer la position de ce module dans la liste des modules
-    public int getPosition () {
-        return position;
-    }
-
-    public void setPosition (int position) {
-        this.position = position;
-    }
-
     public String getSigle() {
         return sigle;
-    }
-
-    public void setSigle(String sigle) {
-        this.sigle = sigle;
     }
 
     public String getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(String categorie) {
-        this.categorie = categorie;
-    }
-
     public String getParcours() {
         return parcours;
     }
 
-    public void setParcours(String parcours) {
-        this.parcours = parcours;
-    }
-
     public int getCredit() {
         return credit;
-    }
-
-    public void setCredit(int credit) {
-        this.credit = credit;
     }
 
     public int getId() {
@@ -80,5 +54,22 @@ public class Module implements Serializable, Comparable {
     public void setId(int id) {
         this.id = id;
     }
+
+    public void setSigle(String sigle) {
+        this.sigle = sigle;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
+
+    public void setParcours(String parcours) {
+        this.parcours = parcours;
+    }
+
+    public void setCredit(int credit) {
+        this.credit = credit;
+    }
+
 
 }

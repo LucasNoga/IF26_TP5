@@ -1,11 +1,11 @@
-package example.com.if26_tp5.database;
+package example.com.if26_tp6.database;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import example.com.if26_tp5.Module;
+import example.com.if26_tp6.Module;
 
 /*
 DatabaseModule va permettre de gérer la table module de la BD
@@ -34,14 +34,14 @@ public class DatabaseModule {
     private static final int NUM_COL_CREDIT = 4;
 
     //represente notre base de données de module
-    private MaDataBaseSQL databaseModule;
+    private ModulePersistance databaseModule;
 
     //objet necessaire pour avoir acces en lecture ou en ecriture a la base de donnees complete
     private SQLiteDatabase database;
 
     //On crée la BDD et sa table
     public DatabaseModule(Context context){
-        databaseModule = new MaDataBaseSQL(context, NOM_BDD, VERSION_BDD);
+        databaseModule = new ModulePersistance(context, NOM_BDD, VERSION_BDD);
     }
 
     //on ouvre la BDD en écriture

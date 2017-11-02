@@ -7,12 +7,40 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/sigle"
+        android:id="@+id/mi_sigle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:gravity="center"
         android:text="@string/sigle"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mi_parcours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="@string/parcours"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mi_categorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="@string/categorie"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mi_credit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="@string/credit"
+        android:textStyle="bold" />
+
 
 </LinearLayout>

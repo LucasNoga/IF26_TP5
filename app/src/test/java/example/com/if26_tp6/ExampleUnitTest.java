@@ -1,4 +1,4 @@
-package example.com.if26_tp5;
+package example.com.if26_tp6;
 
 import org.junit.Test;
 

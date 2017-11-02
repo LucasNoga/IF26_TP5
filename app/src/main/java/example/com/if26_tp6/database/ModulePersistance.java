@@ -1,4 +1,4 @@
-package example.com.if26_tp5.database;
+package example.com.if26_tp6.database;
 
 
 import android.content.Context;
@@ -7,7 +7,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 /*Cette classe va nous permettre de définir la table qui sera produite lors de l'instanciation de celle-ci.*/
-public class MaDataBaseSQL extends SQLiteOpenHelper{
+public class ModulePersistance extends SQLiteOpenHelper {
+
+    public   static   final   int   DATABASE_VERSION   =   1;
+    public   static   final   String   DATABASE_NAME   =   "Modules.db"; //   nom   du   fichier   pour   la   base private   static   final   String   TABLE_MODULES   =   "module";                 //   nom   de   la   table
+    private   static   final   String   ATTRIBUT_SIGLE   =   "sigle";   //   liste   des   attributs
+    private   static   final   String   ATTRIBUT_CATEGORIE   =   "categorie";
+    private   static   final   String   ATTRIBUT_CREDIT   =   "credit";
+    private   static   final   String   ATTRIBUT_RESULTAT   =   "resultat";
 
     private static final String TABLE_MODULE = "Module";
     private static final String COL_ID = "ID";
@@ -25,7 +32,7 @@ public class MaDataBaseSQL extends SQLiteOpenHelper{
             + COL_CREDIT + " INTEGER NOT NULL);";
 
     /*Constructeur de la base*/
-    public MaDataBaseSQL(Context context, String name, int version) {
+    public ModulePersistance(Context context, String name, int version) {
         super(context, name, null, version);
     }
 
